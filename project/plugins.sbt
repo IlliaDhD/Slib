@@ -1,0 +1,5 @@
+addSbtPlugin("com.github.sbt"     % "sbt-native-packager" % "1.11.1")
+addSbtPlugin("com.github.sbt"     % "sbt-git"             % "2.1.0")
+addSbtPlugin("ch.epfl.scala"      % "sbt-scalafix"        % "0.14.3")
+addSbtPlugin("org.scalameta"      % "sbt-scalafmt"        % "2.5.0")
+addCompilerPlugin("org.scalameta" % "semanticdb-scalac"   % "4.12.3" cross CrossVersion.full)
