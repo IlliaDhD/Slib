@@ -1,10 +1,11 @@
 object Options {
   val options: Seq[String] = Seq(
     "-feature",
-    "-Wvalue-discard",
-    "-Wunused:all",
+    "-Ywarn-value-discard",
+    "-Ywarn-dead-code",
+    "-Ywarn-unused",
     "-language:postfixOps",
     "-deprecation",
-    "-Xtarget:11",
+    "-Yrangepos"
   )
 }
