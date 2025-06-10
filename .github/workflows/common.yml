@@ -23,3 +23,14 @@ jobs:
         run: sbt scalafmtCheck
       - name: Run linting tests
         run: sbt 'scalafix --check'
+
+  build-testing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: olafurpg/setup-scala@v11
+      - name: Build docker image
+        run: sbt Docker/publishLocal
+      - name: Clean-up
+        run: sbt Docker/clean
