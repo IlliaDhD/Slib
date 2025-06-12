@@ -15,5 +15,5 @@ trait GenreTableDescription {
     def * = (id, genre).mapTo[GenreObject]
   }
 
-  lazy val tagTable = TableQuery[GenreTable]
+  lazy val genreTable = TableQuery[GenreTable]
 }

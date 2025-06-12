@@ -1,7 +1,5 @@
 package common.models
 
-import common.types.Annotation
-
 import java.util.UUID
 
 case class BookDB(
@@ -11,5 +9,5 @@ case class BookDB(
     year: Int,
     image: String,
     genreId: UUID,
-    annotation: Annotation
+    annotation: String
 )

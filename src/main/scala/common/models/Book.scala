@@ -1,6 +1,7 @@
 package common.models
 
-import common.types.{Annotation, Genre}
+import common.types.Genre
+import play.api.libs.json.{Json, OFormat}
 
 import java.util.UUID
 
@@ -11,5 +12,9 @@ case class Book(
     pYear: Int,
     image: String,
     genre: Genre,
-    annotation: Annotation
+    annotation: String
 )
+
+object Book {
+  implicit val jsonFormat: OFormat[Book] = Json.format[Book]
+}
