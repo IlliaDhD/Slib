@@ -9,6 +9,8 @@ object Dependencies {
     val akkaHttpCors       = "1.2.0"
     val scalatest          = "3.2.19"
     val scalamock          = "6.0.0"
+    val swagger            = "2.7.0"
+    val swaggerAnnotations = "2.2.15"
     val macwire            = "2.6.4"
     val ficus              = "1.5.2"
     val enumeratum         = "1.7.5"
@@ -25,16 +27,18 @@ object Dependencies {
     "org.scalatest"     %% "scalatest"         % versions.scalatest % Test,
     "org.scalamock"     %% "scalamock"         % versions.scalamock % Test,
     "com.typesafe.akka" %% "akka-testkit"      % versions.akka      % Test,
-    "com.typesafe.akka" %% "akka-http-testkit" % versions.akkaHttp  % Test,
+    "com.typesafe.akka" %% "akka-http-testkit" % versions.akkaHttp  % Test
   )
 
   private val akkaLibraries = Seq(
-    "com.typesafe.akka" %% "akka-http"           % versions.akkaHttp,
-    "de.heikoseeberger" %% "akka-http-play-json" % versions.akkaPlayJson,
-    "com.typesafe.akka" %% "akka-stream"         % versions.akka,
-    "com.typesafe.akka" %% "akka-stream"         % versions.akka,
-    "com.typesafe.akka" %% "akka-protobuf"       % versions.akka,
-    "ch.megard"         %% "akka-http-cors"      % versions.akkaHttpCors
+    "com.typesafe.akka"            %% "akka-http"           % versions.akkaHttp,
+    "de.heikoseeberger"            %% "akka-http-play-json" % versions.akkaPlayJson,
+    "com.typesafe.akka"            %% "akka-stream"         % versions.akka,
+    "com.typesafe.akka"            %% "akka-stream"         % versions.akka,
+    "com.typesafe.akka"            %% "akka-protobuf"       % versions.akka,
+    "com.github.swagger-akka-http" %% "swagger-akka-http"   % versions.swagger,
+    "io.swagger.core.v3"            % "swagger-annotations" % versions.swaggerAnnotations,
+    "ch.megard"                    %% "akka-http-cors"      % versions.akkaHttpCors
   )
 
   private val databaseLibraries = Seq(
@@ -53,7 +57,8 @@ object Dependencies {
     "com.beachape"             %% "enumeratum-slick"     % versions.enumeratumSlick,
     "com.softwaremill.macwire" %% "macros"               % versions.macwire % Provided,
     "com.softwaremill.macwire" %% "util"                 % versions.macwire,
-    "com.outr"                 %% "scribe-slf4j"         % versions.scribe
+    "com.outr"                 %% "scribe-slf4j"         % versions.scribe,
+    "jakarta.ws.rs"             % "jakarta.ws.rs-api"    % "3.0.0"
   )
 
   val libraries: Seq[ModuleID] = testLibraries ++ akkaLibraries ++ databaseLibraries ++ other
