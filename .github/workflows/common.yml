@@ -16,7 +16,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: olafurpg/setup-scala@v11
+      - uses: olafurpg/setup-scala@v12
+        with:
+          java-version: 'adopt@1.11'
       - name: Run tests
         run: sbt test
       - name: Run formatting tests
@@ -29,7 +31,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - uses: olafurpg/setup-scala@v11
+      - uses: olafurpg/setup-scala@v12
+        with:
+          java-version: 'adopt@1.11'
       - name: Build docker image
         run: sbt Docker/publishLocal
       - name: Clean-up
