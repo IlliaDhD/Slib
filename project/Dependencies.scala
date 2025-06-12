@@ -32,6 +32,7 @@ object Dependencies {
     "com.typesafe.akka" %% "akka-http"           % versions.akkaHttp,
     "de.heikoseeberger" %% "akka-http-play-json" % versions.akkaPlayJson,
     "com.typesafe.akka" %% "akka-stream"         % versions.akka,
+    "com.typesafe.akka" %% "akka-stream"         % versions.akka,
     "com.typesafe.akka" %% "akka-protobuf"       % versions.akka,
     "ch.megard"         %% "akka-http-cors"      % versions.akkaHttpCors
   )
