@@ -4,7 +4,7 @@ import common.types.Genre
 
 import java.util.UUID
 
-case class GenreObject (
+case class GenreObject(
     id: UUID,
     genre: Genre
-                 )
+)
