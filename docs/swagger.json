@@ -1,0 +1,172 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Book API",
+    "description" : "",
+    "termsOfService" : "",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8080/docs/"
+  } ],
+  "security" : [ ],
+  "tags" : [ {
+    "name" : "Book API",
+    "description" : "Операції для управління книгами"
+  } ],
+  "paths" : {
+    "/books/add" : {
+      "post" : {
+        "tags" : [ "Book API" ],
+        "summary" : "Додати нову книгу",
+        "operationId" : "addBook",
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "author",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "annotation",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "genre",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "publication_year",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "tags",
+          "in" : "query",
+          "description" : "Список тегів",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "image",
+          "in" : "query",
+          "description" : "Зображення книги",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Книгу додано"
+          }
+        }
+      }
+    },
+    "/books/delete" : {
+      "post" : {
+        "tags" : [ "Book API" ],
+        "summary" : "Видалити книгу за ID",
+        "operationId" : "deleteBook",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Книга видалена"
+          }
+        }
+      }
+    },
+    "/books/get" : {
+      "get" : {
+        "tags" : [ "Book API" ],
+        "summary" : "Отримати книгу за ID",
+        "operationId" : "getBook",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Книга знайдена"
+          }
+        }
+      }
+    },
+    "/books/list" : {
+      "get" : {
+        "tags" : [ "Book API" ],
+        "summary" : "Отримати список книг з фільтрами",
+        "operationId" : "listBooks",
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "genre",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "author",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "tags",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "limit",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "offset",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Список книг"
+          }
+        }
+      }
+    }
+  }
+}

@@ -9,7 +9,6 @@ import io.swagger.v3.oas.annotations.Parameter
 import jakarta.ws.rs._
 import jakarta.ws.rs.core.MediaType
 
-
 @Tag(name = "Book API", description = "Операції для управління книгами")
 @Path("/books")
 trait BookSwaggerDoc {
@@ -29,9 +28,11 @@ trait BookSwaggerDoc {
       new Parameter(name = "image", in = ParameterIn.QUERY, required = false, description = "Зображення книги")
     )
   )
-  @ApiResponses(Array(
-    new ApiResponse(responseCode = "200", description = "Книгу додано")
-  ))
+  @ApiResponses(
+    Array(
+      new ApiResponse(responseCode = "200", description = "Книгу додано")
+    )
+  )
   def addBook(): Unit = {}
 
   @GET
@@ -42,9 +43,11 @@ trait BookSwaggerDoc {
       new Parameter(name = "id", in = ParameterIn.QUERY, required = true)
     )
   )
-  @ApiResponses(Array(
-    new ApiResponse(responseCode = "200", description = "Книга знайдена")
-  ))
+  @ApiResponses(
+    Array(
+      new ApiResponse(responseCode = "200", description = "Книга знайдена")
+    )
+  )
   def getBook(): Unit = {}
 
   @GET
@@ -60,9 +63,11 @@ trait BookSwaggerDoc {
       new Parameter(name = "offset", in = ParameterIn.QUERY, required = true)
     )
   )
-  @ApiResponses(Array(
-    new ApiResponse(responseCode = "200", description = "Список книг")
-  ))
+  @ApiResponses(
+    Array(
+      new ApiResponse(responseCode = "200", description = "Список книг")
+    )
+  )
   def listBooks(): Unit = {}
 
   @POST
@@ -73,8 +78,10 @@ trait BookSwaggerDoc {
       new Parameter(name = "id", in = ParameterIn.QUERY, required = true)
     )
   )
-  @ApiResponses(Array(
-    new ApiResponse(responseCode = "200", description = "Книга видалена")
-  ))
+  @ApiResponses(
+    Array(
+      new ApiResponse(responseCode = "200", description = "Книга видалена")
+    )
+  )
   def deleteBook(): Unit = {}
 }

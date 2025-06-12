@@ -6,7 +6,7 @@ import java.nio.charset.StandardCharsets
 
 object SwaggerGenerator extends App {
   private val service = new SwaggerDocService()
-  val json    = service.generateSwaggerJson
+  val json            = service.generateSwaggerJson
 
-  Files.write(Paths.get("openapi.json"), json.getBytes(StandardCharsets.UTF_8))
+  Files.write(Paths.get("docs/swagger.json"), json.getBytes(StandardCharsets.UTF_8))
 }
