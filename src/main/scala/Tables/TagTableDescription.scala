@@ -11,7 +11,7 @@ trait TagTableDescription {
   class TagTable(tagTable: Tag) extends Table[TagObject](tagTable, "t_tag") {
     def id = column[UUID]("id", O.PrimaryKey)
 
-    def tag = column[TagVal]("name", O.SqlType("Text"))
+    def tag = column[TagVal]("tag", O.SqlType("Text"))
 
     def * = (id, tag).mapTo[TagObject]
   }
