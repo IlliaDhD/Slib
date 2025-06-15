@@ -10,7 +10,7 @@ trait GenreTableDescription {
   class GenreTable(tagTable: Tag) extends Table[GenreObject](tagTable, "t_genre") {
     def id = column[UUID]("id", O.PrimaryKey)
 
-    def genre = column[Genre]("name", O.SqlType("Text"))
+    def genre = column[Genre]("genre", O.SqlType("Text"))
 
     def * = (id, genre).mapTo[GenreObject]
   }

@@ -13,7 +13,7 @@ trait BookTableDescription {
 
     def authorId = column[UUID]("author")
 
-    def genreId = column[UUID]("tagId")
+    def genreId = column[UUID]("genre")
 
     def annotation = column[String]("annotation")
 

@@ -10,13 +10,13 @@ import slick.jdbc.PostgresProfile.api._
 import scala.concurrent.Future
 
 case class ProjectDatabase(config: Config) {
-  private val url           = config.getString("db.url")
-  private val dbUser        = config.getString("db.user")
-  private val userPassword  = config.getString("db.password")
-  private val migrationPath = config.getString("db.migrationPath")
+  private val url           = config.getString("database.db.url")
+  private val dbUser        = config.getString("database.db.user")
+  private val userPassword  = config.getString("database.db.password")
+  private val migrationPath = config.getString("database.db.migrationPath")
 
-  val db       = Database.forConfig("db", config)
-  val provider = DatabaseConfig.forConfig[PostgresProfile]("db", config)
+  val db       = Database.forConfig("database.db", config)
+  val provider = DatabaseConfig.forConfig[PostgresProfile]("database", config)
   private lazy val flyway =
     Flyway
       .configure()
