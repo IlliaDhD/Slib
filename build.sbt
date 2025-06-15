@@ -1,9 +1,10 @@
 lazy val root = (project in file("."))
   .enablePlugins(DockerPlugin, JavaServerAppPackaging, GitVersioning)
   .settings(
-    name              := "Slib",
-    scalaVersion      := "2.13.16",
-    semanticdbEnabled := true,
+    name                := "Slib",
+    scalaVersion        := "2.13.16",
+    semanticdbEnabled   := true,
+    Compile / mainClass := Some("Bootstrap"),
     libraryDependencies ++= Dependencies.libraries,
     git.useGitDescribe := true,
     git.baseVersion    := "0.0.0",

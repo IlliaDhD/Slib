@@ -10,7 +10,7 @@ import java.util.UUID
 
 class BookController(bookService: BookService) extends Controller {
 
-  override def routes: Route = pathPrefix("books")(addBook ~ deleteBook())
+  override def routes: Route = pathPrefix("books")(addBook() ~ deleteBook() ~ getBook() ~ listBooks())
 
   def addBook(): Route =
     path("add") {
@@ -30,7 +30,7 @@ class BookController(bookService: BookService) extends Controller {
       }
     }
 
-  def getBook: Route =
+  def getBook(): Route =
     get {
       parameters(
         "id".as[UUID]
